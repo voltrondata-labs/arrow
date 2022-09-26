@@ -49,7 +49,7 @@ jobs:
 
   docker:
     name: AMD64 manylinux2014 Java JNI
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 90
     steps:
@@ -85,7 +85,7 @@ jobs:
 
   docker_integration_python:
     name: AMD64 Conda Java C Data Interface Integration
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 90
     steps:

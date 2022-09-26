@@ -40,7 +40,7 @@ jobs:
     env:
       PREFIX: ${{ github.event.inputs.prefix || ''}}
       CROSSBOW_GITHUB_TOKEN: ${{ github.token }}
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     steps:
       - name: Checkout Arrow
         uses: actions/checkout@v3

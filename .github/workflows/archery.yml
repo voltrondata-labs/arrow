@@ -43,7 +43,7 @@ jobs:
   test:
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     name: Archery Unittests and Crossbow Check Config
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     timeout-minutes: 15
     steps:
       - name: Checkout Arrow

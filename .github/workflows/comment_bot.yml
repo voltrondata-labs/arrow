@@ -32,7 +32,7 @@ jobs:
   crossbow:
     name: Listen!
     if: startsWith(github.event.comment.body, '@github-actions crossbow')
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     steps:
       - name: Checkout Arrow
         uses: actions/checkout@v3
@@ -58,7 +58,7 @@ jobs:
   autotune:
     name: "Fix all the things"
     if: startsWith(github.event.comment.body, '@github-actions autotune')
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     steps:
       - uses: actions/checkout@v3
       - uses: r-lib/actions/pr-fetch@v2
@@ -156,7 +156,7 @@ jobs:
   rebase:
     name: "Rebase"
     if: startsWith(github.event.comment.body, '@github-actions rebase')
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     steps:
       - uses: actions/checkout@v3
       - uses: r-lib/actions/pr-fetch@v2

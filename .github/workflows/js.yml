@@ -42,7 +42,7 @@ jobs:
 
   docker:
     name: AMD64 Debian 11 NodeJS 16
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     steps:

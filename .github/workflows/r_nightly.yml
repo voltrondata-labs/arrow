@@ -14,7 +14,7 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-
+if 
 name: Upload R Nightly builds
 # This workflow downloads the (nightly) binaries created in crossbow and uploads them
 # to nightlies.apache.org. Due to authorization requirements, this upload can't be done 
@@ -42,7 +42,7 @@ permissions:
 jobs:
   upload:
     if: github.repository == 'apache/arrow'
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     steps:
       - name: Checkout Arrow
         uses: actions/checkout@v3

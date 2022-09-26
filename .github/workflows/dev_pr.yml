@@ -40,7 +40,7 @@ permissions:
 jobs:
   process:
     name: Process
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     steps:
       - uses: actions/checkout@v3
 

@@ -52,7 +52,7 @@ env:
 jobs:
   ubuntu:
     name: AMD64 Ubuntu ${{ matrix.ubuntu }} R ${{ matrix.r }} Force-Tests ${{ matrix.force-tests }}
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 75
     strategy:
@@ -119,7 +119,7 @@ jobs:
 
   bundled:
     name: "${{ matrix.config.org }}/${{ matrix.config.image }}:${{ matrix.config.tag }}"
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     strategy:
@@ -177,7 +177,7 @@ jobs:
 
   windows-cpp:
     name: AMD64 Windows C++ RTools ${{ matrix.config.rtools }} ${{ matrix.config.arch }}
-    runs-on: windows-2019
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 90
     strategy:
@@ -229,7 +229,7 @@ jobs:
   windows-r:
     needs: [windows-cpp]
     name: AMD64 Windows R ${{ matrix.config.rversion }} RTools ${{ matrix.config.rtools }}
-    runs-on: windows-2019
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 75
     strategy:
