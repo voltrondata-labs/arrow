@@ -57,7 +57,7 @@ case "$(uname)" in
   Darwin)
     n_jobs=$(sysctl -n hw.ncpu)
     ;;
-  MINGW*)
+  MINGW*|MSYS_NT*)
     n_jobs=${NUMBER_OF_PROCESSORS:-1}
     ;;
   *)

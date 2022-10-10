@@ -29,7 +29,7 @@ prefix=$2
 
 mkdir -p /tmp/ccache
 case $(uname) in
-  MINGW64*)
+  MINGW64*|MSYS_NT*)
     url="https://github.com/ccache/ccache/releases/download/v${version}/ccache-${version}-windows-x86_64.zip"
     pushd /tmp/ccache
     curl --fail --location --remote-name ${url}
