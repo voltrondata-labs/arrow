@@ -55,7 +55,7 @@ env:
 jobs:
   docker:
     name: ${{ matrix.title }}
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 75
     strategy:
@@ -105,7 +105,7 @@ jobs:
 
   build-example:
     name: C++ Minimal Build Example
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 45
     steps:
@@ -194,17 +194,11 @@ jobs:
 
   windows:
     name: AMD64 ${{ matrix.name }} C++17
-    runs-on: ${{ matrix.os }}
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     strategy:
       fail-fast: false
-      matrix:
-        os:
-          - windows-2019
-        include:
-          - os: windows-2019
-            name: Windows 2019
     env:
       ARROW_BOOST_USE_SHARED: OFF
       ARROW_BUILD_BENCHMARKS: ON
@@ -294,7 +288,7 @@ jobs:
 
   windows-mingw:
     name: AMD64 Windows MinGW ${{ matrix.msystem_upper }} C++
-    runs-on: windows-2019
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     # Build may take 1h+ without cache.
     timeout-minutes: 120

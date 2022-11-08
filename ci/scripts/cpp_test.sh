@@ -48,7 +48,7 @@ case "$(uname)" in
   Darwin)
     n_jobs=$(sysctl -n hw.ncpu)
     ;;
-  MINGW*)
+  MINGW*|MSYS_NT*)
     n_jobs=${NUMBER_OF_PROCESSORS:-1}
     # TODO: Enable these crashed tests.
     # https://issues.apache.org/jira/browse/ARROW-9072

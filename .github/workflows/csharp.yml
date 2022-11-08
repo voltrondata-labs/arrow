@@ -40,7 +40,7 @@ jobs:
 
   ubuntu:
     name: AMD64 Ubuntu 18.04 C# ${{ matrix.dotnet }}
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     strategy:
@@ -68,7 +68,7 @@ jobs:
 
   windows:
     name: AMD64 Windows 2019 18.04 C# ${{ matrix.dotnet }}
-    runs-on: windows-2019
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     strategy:

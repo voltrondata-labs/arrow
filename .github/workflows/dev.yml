@@ -33,7 +33,7 @@ jobs:
 
   lint:
     name: Lint C++, Python, R, Docker, RAT
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     steps:
       - name: Checkout Arrow

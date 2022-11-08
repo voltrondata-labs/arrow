@@ -38,7 +38,7 @@ if verlte "1.18" "${ver#go}" && [ "$(go env GOOS)" != "darwin" ]; then
 fi
 
 case "$(uname)" in
-    MINGW*)
+    MINGW*|MSYS_NT*)
         # -asan and -race don't work on windows currently
         testargs=""
         ;;

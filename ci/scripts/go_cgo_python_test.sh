@@ -30,7 +30,7 @@ case "$(uname)" in
     Darwin)
         testlib="cgotest.so"
         ;;
-    MINGW*)
+    MINGW*|MSYS_NT*)
         testlib="cgotest.dll"
         ;;
 esac

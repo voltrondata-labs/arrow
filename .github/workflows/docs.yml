@@ -31,7 +31,7 @@ jobs:
 
   complete:
     name: AMD64 Ubuntu 20.04 Complete Documentation
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 150
     env:

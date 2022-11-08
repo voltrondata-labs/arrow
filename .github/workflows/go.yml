@@ -43,7 +43,7 @@ jobs:
 
   docker:
     name: AMD64 Debian 11 Go ${{ matrix.go }}
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 30
     strategy:
@@ -95,7 +95,7 @@ jobs:
 
   docker_cgo:
     name: AMD64 Debian 11 GO ${{ matrix.go }} - CGO
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     strategy:
@@ -138,7 +138,7 @@ jobs:
 
   docker_cgo_python:
     name: AMD64 Debian 11 GO ${{ matrix.go }} - CGO Python
-    runs-on: ubuntu-latest
+    runs-on: ["ubuntu-latest","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     strategy:
@@ -179,7 +179,7 @@ jobs:
 
   windows:
     name: AMD64 Windows 2019 Go ${{ matrix.go }}
-    runs-on: windows-2019
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     strategy:
@@ -306,7 +306,7 @@ jobs:
 
   windows-mingw:
     name: AMD64 Windows MinGW ${{ matrix.mingw-n-bits }} CGO
-    runs-on: windows-2019
+    runs-on: ["windows-2019","self-hosted"]
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     strategy:
